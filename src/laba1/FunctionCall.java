@@ -13,7 +13,7 @@ class FunctionCall implements Expression { // Класс "Вызов функц�
         }
     }
 
-
+    @Override
     public double evaluate() {
         double argValue = arg.evaluate();
 
@@ -23,7 +23,7 @@ class FunctionCall implements Expression { // Класс "Вызов функц�
             default -> throw new IllegalArgumentException("Unknown function: " + name);
         };
     }
-
+    @Override
     public Expression transform(Transformer tr) {
         return tr.transformFunctionCall(this);
     }
@@ -34,5 +34,10 @@ class FunctionCall implements Expression { // Класс "Вызов функц�
 
     public Expression getArg() {
         return arg;
+    }
+
+    @Override
+    public String toString(){
+        return name +"(" + arg +")";
     }
 }

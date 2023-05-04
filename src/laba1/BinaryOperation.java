@@ -28,7 +28,7 @@ class BinaryOperation implements Expression {
         this.right = right;
         this.operation = operation;
     }
-
+    @Override
     public double evaluate() {
         double leftValue = left.evaluate();
         double rightValue = right.evaluate();
@@ -41,7 +41,7 @@ class BinaryOperation implements Expression {
             default -> throw new IllegalArgumentException("Unknown operation: " + operation); //а зачем ты?
         };
     }
-
+    @Override
     public Expression transform(Transformer tr) {
         return tr.transformBinaryOperation(this);
     }
@@ -56,5 +56,10 @@ class BinaryOperation implements Expression {
 
     public Operation getOperation() {
         return operation;
+    }
+
+    @Override
+    public String toString(){
+        return "(" + left + " "+ getOperation().getSymbol()+ " " + right +")";
     }
 }
