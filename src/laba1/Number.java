@@ -10,5 +10,12 @@ class Number implements Expression { // Класс "Число"
     public double evaluate() {
         return value;
     }
+    public Expression transform(Transformer tr) {
+        return tr.transformNumber(this);
+    }
+
+    public double getValue() {
+        return value;
+    }
 }
 

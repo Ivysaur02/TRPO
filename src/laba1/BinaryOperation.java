@@ -7,6 +7,10 @@ class BinaryOperation implements Expression {
         DIV('/'),
         MUL('*');
 
+        public char getSymbol() {
+            return symbol;
+        }
+
         private final char symbol;
 
         Operation(char symbol) {
@@ -36,5 +40,21 @@ class BinaryOperation implements Expression {
             case MUL -> leftValue * rightValue;
             default -> throw new IllegalArgumentException("Unknown operation: " + operation); //а зачем ты?
         };
+    }
+
+    public Expression transform(Transformer tr) {
+        return tr.transformBinaryOperation(this);
+    }
+
+    public Expression getLeft() {
+        return left;
+    }
+
+    public Expression getRight() {
+        return right;
+    }
+
+    public Operation getOperation() {
+        return operation;
     }
 }

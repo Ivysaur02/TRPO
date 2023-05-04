@@ -23,4 +23,16 @@ class FunctionCall implements Expression { // Класс "Вызов функц�
             default -> throw new IllegalArgumentException("Unknown function: " + name);
         };
     }
+
+    public Expression transform(Transformer tr) {
+        return tr.transformFunctionCall(this);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Expression getArg() {
+        return arg;
+    }
 }

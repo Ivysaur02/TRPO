@@ -11,4 +11,12 @@ class Variable implements Expression { // Класс "Переменная"
     public double evaluate() {
         return 0.0;
     }
+
+    public Expression transform(Transformer tr) {
+        return tr.transformVariable(this);
+    }
+
+    public String getName() {
+        return name;
+    }
 }

@@ -1,14 +1,7 @@
 package laba1;
 
-
-public class Main {
+public class MainCST {
     public static void main(String[] args) {
-        //пример использования
-        Expression e1 = new Number(1.234);
-        Expression e2 = new Number(-1.234);
-        Expression e3 = new BinaryOperation(e1, BinaryOperation.Operation.DIV, e2);
-        System.out.println(e3.evaluate());
-        //----------------------------------------------------------------------------------
         Expression n32 = new Number(32.0);
         Expression n16 = new Number(16.0);
         Expression minus = new BinaryOperation(n32, BinaryOperation.Operation.MINUS, n16);
@@ -17,6 +10,8 @@ public class Main {
         Expression mult = new BinaryOperation(n2, BinaryOperation.Operation.MUL, callSqrt);
         Expression callAbs = new FunctionCall("abs", mult);
         System.out.println(callAbs.evaluate());
-        //---------------------------------------------------------------
+        Expression newexp = callAbs.transform(new CopySyntaxTree());
+        Expression newexpchange = new BinaryOperation(n2, BinaryOperation.Operation.PLUS, newexp);
+        System.out.println(newexpchange.evaluate());
     }
 }
