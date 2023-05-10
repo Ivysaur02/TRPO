@@ -1,6 +1,6 @@
 package laba1;
 
-class FunctionCall implements Expression { // Класс "Вызов функции"
+public class FunctionCall implements Expression { // Класс "Вызов функции"
     private String name;
     private Expression arg;
 

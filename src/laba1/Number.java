@@ -1,6 +1,6 @@
 package laba1;
 
-class Number implements Expression { // Класс "Число"
+public class Number implements Expression { // Класс "Число"
     private double value;
 
     public Number(double value) {

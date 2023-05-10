@@ -1,6 +1,6 @@
 package laba1;
 
-class Variable implements Expression { // Класс "Переменная"
+public class Variable implements Expression { // Класс "Переменная"
     private String name;
 
     public Variable(String name) {

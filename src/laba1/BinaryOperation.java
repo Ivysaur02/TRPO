@@ -1,6 +1,6 @@
 package laba1;
 
-class BinaryOperation implements Expression {
+public class BinaryOperation implements Expression {
     public enum Operation {
         PLUS('+'),
         MINUS('-'),
