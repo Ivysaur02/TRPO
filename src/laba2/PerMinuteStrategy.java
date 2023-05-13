@@ -12,5 +12,10 @@ public class PerMinuteStrategy implements BillingStrategy {
         int totalMinutes = (int) Math.ceil(totalDuration / 60.0);
         return totalMinutes * costPerMinute;
     }
+
+    @Override
+    public String toString(){
+        return "PerMinuteStrategy";
+    }
 }
 

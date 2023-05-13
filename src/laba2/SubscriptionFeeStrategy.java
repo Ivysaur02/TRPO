@@ -11,5 +11,10 @@ public class SubscriptionFeeStrategy implements BillingStrategy {
     public double calculateCost(int numberOfCalls, int totalDuration) {
         return subscriptionFee;
     }
+
+    @Override
+    public String toString(){
+        return "SubscriptionFeeStrategy";
+    }
 }
 
