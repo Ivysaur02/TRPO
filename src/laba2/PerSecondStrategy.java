@@ -11,5 +11,10 @@ public class PerSecondStrategy implements BillingStrategy {
     public double calculateCost(int numberOfCalls, int totalDuration) {
         return totalDuration * costPerSecond;
     }
-}
 
+
+    @Override
+    public String toString(){
+        return "PerSecondStrategy";
+    }
+}

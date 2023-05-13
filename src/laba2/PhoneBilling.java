@@ -21,4 +21,18 @@ public class PhoneBilling {
     public double getTotalCost() {
         return billingStrategy.calculateCost(numberOfCalls, totalDuration);
     }
+
+
+    @Override
+    public String toString(){
+        return billingStrategy.toString();
+    }
+
+    public int getNumberOfCalls() {
+        return numberOfCalls;
+    }
+
+    public int getTotalDuration() {
+        return totalDuration;
+    }
 }
